@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <div class="title">Calculator</div>
+    <div class="container">
+        <div id="display"></div>
+        <button class="reset" onclick="btnReset()">AC</button>
+        <button class="backspace" onclick="btnDelete()">Delete</button>
+        <button class="button" id="one" onclick="btnPress(this)">1</button>
+        <button class="button" id="two" onclick="btnPress(this)">2</button>
+        <button class="button" id="three" onclick="btnPress(this)">3</button>
+        <button class="button" id="four" onclick="btnPress(this)">4</button>
+        <button class="button" id="five" onclick="btnPress(this)">5</button>
+        <button class="button" id="six" onclick="btnPress(this)">6</button>
+        <button class="button" id="seven" onclick="btnPress(this)">7</button>
+        <button class="button" id="eight" onclick="btnPress(this)">8</button>
+        <button class="button" id="nine" onclick="btnPress(this)">9</button>
+        <button class="button" id="zero" onclick="btnPress(this)">0</button>
+        <button class="operator" id="plus-op" onclick="btnAdd()">+</button>
+        <button class="operator" id="minus-op">-</button>
+        <button class="operator" id="times-op">*</button>
+        <button class="operator" id="division-op">/</button>
+        <button class="operator" id="equals-op">=</button>
+    </div>
+</body>
+</html>
