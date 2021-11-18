@@ -1,5 +1,5 @@
 let displayText = "";
-let memoryFresh = "0";
+let memoryNew = "0";
 let memoryOld = "0";
 let operator = "";
 let freshNumber = true;
@@ -22,7 +22,7 @@ function btnReset(){
     displayText = "";
     displayElement.innerHTML="";
     operator = "";
-    memoryFresh="0"
+    memoryNew="0"
     memoryOld="0";
 }
 
@@ -31,11 +31,53 @@ function btnDelete(){
     displayElement.innerHTML=displayText;
 }
 
-function btnAdd(){
+function btnOperator(e){
+    if (operator === "") noOp();
+    if (operator === "+") add();
+    if (operator === "-") subtract();
+    if (operator === "*") multiply();
+    if (operator === "/") divide();    
+    
+    operator = e.innerHTML;
+}
+
+function noOp(){
+    memoryNew = displayText;
+    // displayText = "";
+    // displayElement.innerHTML=displayText;
+    memoryOld = displayText;
+    freshNumber = true; 
+}
+
+function add(){
     memoryNew = displayText;
     displayText = (parseFloat(memoryNew)+parseFloat(memoryOld)).toString();
     displayElement.innerHTML=displayText;
     memoryOld = displayText;
     freshNumber = true;  
-
 }
+
+function subtract(){
+    memoryNew = displayText;
+    displayText = (parseFloat(memoryOld)-parseFloat(memoryNew)).toString();
+    displayElement.innerHTML=displayText;
+    memoryOld = displayText;
+    freshNumber = true; 
+}
+
+function divide(){
+    memoryNew = displayText;
+    displayText = (parseFloat(memoryOld)/parseFloat(memoryNew)).toString();
+    displayElement.innerHTML=displayText;
+    memoryOld = displayText;
+    freshNumber = true; 
+}
+
+function multiply(){
+    memoryNew = displayText;
+    displayText = (parseFloat(memoryOld)*parseFloat(memoryNew)).toString();
+    displayElement.innerHTML=displayText;
+    memoryOld = displayText;
+    freshNumber = true; 
+}
+
